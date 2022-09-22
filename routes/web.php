@@ -28,7 +28,8 @@ Route::get('/announcement', [App\Http\Controllers\User\UserController::class, 'a
 
 Route::get('/branch', [App\Http\Controllers\BranchController::class, 'branch']);
 
-Route::prefix('user')->group(function (){
+Route::prefix('user')->middleware(['auth', 'isValidatedUser'])->group(function (){
+    
     Route::controller(App\Http\Controllers\User\UserController::class)->group(function (){
         Route::get('/dashboard', 'index');
         Route::get('/announce', 'announcement');
@@ -67,6 +68,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::post('/reading-materials', 'store');
         Route::get('/reading-materials/{reading_file}/edit', 'edit');
         Route::put('/reading-materials/{reading_file}', 'update');
+
     });
 
     Route::controller(App\Http\Controllers\Admin\StudentController::class)->group(function () {
@@ -81,5 +83,11 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::get('/slider', 'index');
         Route::get('/slider/create', 'create');
         Route::post('/slider', 'store');
+        Route::get('/slider/{slider_id}', 'edit');
+    });
+
+    Route::controller(App\Http\Controllers\Admin\ApproveUserController::class)->group(function (){
+        Route::get('/user-approval', 'index');
+        Route::get('/status/{id}', 'status');
     });
 });

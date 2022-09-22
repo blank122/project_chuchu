@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +13,7 @@
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('admin/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/vendors/base/vendor.bundle.base.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
     <!-- endinject -->
     <!-- plugin css for this page -->
@@ -25,20 +26,27 @@
 
     @livewireStyles
 </head>
+
 <body>
 
     <div class="container-scroller">
-    @include('layouts.includes.user.navbar') <!--Navbar-->
-
-        <div class="container-fluid page-body-wrapper"> 
-            @include('layouts.includes.user.sidebar')  <!--Sidebar-->
+        @include('layouts.includes.user.navbar')
+        <!--Navbar-->
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
+        <div class="container-fluid page-body-wrapper">
+            @include('layouts.includes.user.sidebar')
+            <!--Sidebar-->
 
             <div class="main-panel">
                 <div class="content-wrapper">
                     @yield('content')
                 </div>
             </div>
-            
+
         </div>
     </div>
 
@@ -61,4 +69,5 @@
 
     @livewireScripts
 </body>
+
 </html>

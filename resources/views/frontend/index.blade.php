@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
+
     <div class="container-fluid bg-gray shadow p-3 m-3 bg-body rounded">
         <div class="text-center">
             <div class="fs-1 my-2 text">WRESTLEMIND REVIEW CENTER</div>
@@ -11,7 +17,7 @@
             </div>
         </div>
         <div>
-            <img class="front-page " src="{{asset('images/frontpage1.webp')}}" alt="">
+            <img class="front-page " src="{{ asset('images/frontpage1.webp') }}" alt="">
         </div>
         <p class="content-body mt-5">The main audience for Criminology Board Examination Reviewer
             is individuals who plan to take the criminologists'

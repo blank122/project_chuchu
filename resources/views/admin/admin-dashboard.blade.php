@@ -14,17 +14,23 @@
             </div>
         </div>
         <div class="card mx-2" style="width: 18rem;">
-            <img src="{{ url('uploads/announcementImages/1663344136.jpg') }}"
-                class="card-img-top img-fluid mt-2 border border-danger" alt="students">
+            <img src="{{asset('images/stud.jpg')}}" class="card-img-top img-fluid mt-2">
             <div class="card-body">
-                <h5 class="card-title">Students</h5>
+                <h5 class="card-title">Enrolled Students</h5>
                 <p class="card-text">View All Students</p>
                 <a href="{{ url('admin/students/index') }}" class="btn btn-primary">View</a>
             </div>
         </div>
         <div class="card mx-2" style="width: 18rem;">
-            <img src="{{ url('uploads/announcementImages/1663344136.jpg') }}"
-                class="card-img-top img-fluid mt-2 border border-danger" alt="students">
+            <img src="{{asset('images/stud.jpg')}}" class="card-img-top img-fluid mt-2">
+            <div class="card-body">
+                <h5 class="card-title">Approve Student</h5>
+                <p class="card-text">Approval for Student Enrollment</p>
+                <a href="{{ url('admin/user-approval') }}" class="btn btn-primary">View</a>
+            </div>
+        </div>
+        <div class="card mx-2" style="width: 18rem;">
+            <i class="fa-solid fa-book "></i>
             <div class="card-body">
                 <h5 class="card-title">Reading Materials</h5>
                 <p class="card-text">View All Reading Materials</p>
@@ -37,7 +43,7 @@
             <div class="card-body">
                 <h5 class="card-title">Announcements</h5>
                 <p class="card-text">View All Announcements</p>
-                <a href="{{ url('admin/announcements/') }}" class="btn btn-primary">View</a>
+                <a href="{{ url('admin/announcement/') }}" class="btn btn-primary">View</a>
             </div>
         </div>
         <div class="card mx-2" style="width: 18rem;">

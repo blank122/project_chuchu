@@ -2,13 +2,13 @@
 <nav class="sidebar sidebar-offcanvas top-0 start-0" id="sidebar">
     <ul class="nav" >
         <li class="nav-item">
-            <a class="nav-link" href="{{ url('/home') }}">
+            <a class="nav-link" href="{{ route('user/dashboard') }}">
                 <i class="mdi mdi-chart-histogram menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="{{url('user/announce')}}" aria-expanded="false"
+            <a class="nav-link" data-bs-toggle="collapse" href="{{route('user/announce')}}" aria-expanded="false"
                 aria-controls="announcement">
                 <i class="mdi mdi-message-alert menu-icon"></i>
                 <span class="menu-title">Announcement</span>
