@@ -77,7 +77,7 @@
                     </tbody>
                 </table>
                 <div>
-                    {{ $announcements->links() }}
+                    {{ $Student->links() }}
                 </div>
             </div>
         </div>

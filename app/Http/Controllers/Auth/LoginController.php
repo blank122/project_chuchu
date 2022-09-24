@@ -28,7 +28,6 @@ class LoginController extends Controller
      * @var string
      */
 
-    protected $redirectTo = RouteServiceProvider::HOME;
 
     protected function authenticated ()
     {
@@ -40,7 +39,7 @@ class LoginController extends Controller
             return redirect('user/dashboard')->with('status', 'Logged in Successfully');
         }
         else{
-            return redirect('/')->with('message', 'Something went wrong');
+            return redirect('/')->with('message', 'You are not verified Student');
         }
     }
     

@@ -21,7 +21,6 @@
                     <!-- 2 column grid layout with text inputs for the first and last names -->
                     <div class="border border-primary p-5">
                         <h2 class="text-danger">* Required</h2>
-
                         <div class="row mb-4">
                             <div class="col-md-6 mb-3 ">
                                 <div class="form-outline">

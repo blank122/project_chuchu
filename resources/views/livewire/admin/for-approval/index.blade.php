@@ -22,6 +22,8 @@
                             <th>ID</th>
                             <th>Student Name</th>
                             <th>Student Email</th>
+                            <th>Registered at</th>
+                            <th>Role</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -32,11 +34,19 @@
                                 <td>{{ $user->id }}</td>
                                 <td class="letter-spaced">{{ $user->name }}</td>
                                 <td class="letter-spaced">{{ $user->email }}</td>
+                                <td class="letter-spaced">{{$user->created_at}}</td>
+                                <td>
+                                    @if ($user->role_as == 0)
+                                        Student
+                                    @else
+                                        Admin
+                                    @endif
+                                </td>
                                 <td>
                                     @if ($user->status == 0)
-                                        Inactive
+                                        Not Verified Student
                                     @else
-                                        Active
+                                        Verified 
                                     @endif
                                 </td>
                                 <td class="">
